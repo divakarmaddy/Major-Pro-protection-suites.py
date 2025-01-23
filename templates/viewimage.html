@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>View Details</h1>
+    <table>
+        <tr>
+            <td><h3>Name</h3></td>
+            <td><h3>Mail</h3></td>
+            <td><h3>Designation</h3></td>
+            <td><h3>Profile Picture</h3></td>
+        </tr>
+        {% for i in value %}
+        <tr>
+            <td><h4>{{i.Name}}</h4></td>
+            <td><h4>{{i.Mail}}</h4></td>
+            <td><h4>{{i.Designation}}</h4></td>
+            <td>
+                <img src="{{i.picture.url}}" alt="{{i.picture}}" width="150px" height="150px">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>Upload Details</h1>
+    <from method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <label>Name</label>
+                </td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Mail</label>
+                </td>
+                <td>
+                    <input type="text" name="mail">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Designation</label>
+                </td>
+                <td>
+                    <input type="text" name="designation">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Profile Picture</label>
+                </td>
+                <td>
+                    <input type="file" name="picture">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Upload">
+                </td>
+            </tr>
+        </table>
+    </from>
+</center>
+</body>
+</html>

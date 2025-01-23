@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>View Details</h1>
+    <table>
+        <tr>
+            <th><h2>Name</h2></th>
+            <th><h2>Address</h2></th>
+            <th><h2>Username</h2></th>
+            <th><h2>Password</h2></th>
+            <th><h2>Status</h2></th>
+            <th><h2>Action</h2></th>
+        </tr>
+        {% for i in value %}
+        <tr>
+            <td><h3>{{i.Name}}</h3></td>
+            <td><h3>{{i.Address}}</h3></td>
+            <td><h3>{{i.Username}}</h3></td>
+            <td><h3>{{i.Password}}</h3></td>
+            <td><h3>{{i.Status}}</h3></td>
+            <td><h3>
+                <a href="/edit/{{i.id}}">Edit</a>
+                <a href="/delete/{{i.id}}">Delete</a>
+            </h3></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <br>
+    {% if user_data %}
+    <h3>Update Details</h3>
+    <form method ='POST'>
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <label>Name</label>
+                </td>
+                <td>
+                    {{user_data.Name}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Address</label>
+                </td>
+                <td>
+                    <input type="text" name="address" value="{{user_data.Address}}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Username</label>
+                </td>
+                <td>
+                    {{user_data.Username}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password</label>
+                </td>
+                <td>
+                    <input type="text" name="password" value="{{user_data.Password}}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Status</label>
+                </td>
+                <td>
+                    {{user_data.Status}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <input type="submit" value="save Changes">
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% endif %}
+</center>
+</body>
+</html>
